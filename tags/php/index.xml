@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on Jayson</title>
+    <link>https://www.binjx.top/tags/php/</link>
+    <description>Recent content in PHP on Jayson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Aug 2018 19:35:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.binjx.top/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在CentOS服务器环境中安装高版本的PHP</title>
+      <link>https://www.binjx.top/post/2018-08-20/</link>
+      <pubDate>Mon, 20 Aug 2018 19:35:11 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2018-08-20/</guid>
+      <description>在Centos系统中，通过yum命令安装PHP是非常简单的，简单是简单了，但这样安装的版本较低，一般都是5.4版本，即使在Centos7中亦是如此。 有时候，我们的项目中是基于更高版本的PHP,如PHP5.6，甚至是PHP7.0，显然5.4就不适用了。 所以，我们就要根据自己的需求去安装合适的PHP版本。
+ 如何安装 1.检查系统中是否安装了PHP 在shell中使用以下命令
+rpm -qa|grep php  如果已经安装了PHP,就会列出所安装的包，如果没有则直接进入第二步。
+php56w-fpm-5.6.31-1.w6.x86_64 php-tcpdf-dejavu-sans-fonts-6.2.13-1.el6.noarch php56w-common-5.6.31-1.w6.x86_64 php56w-ldap-5.6.31-1.w6.x86_64 php-fedora-autoloader-1.0.0-1.el6.noarch php56w-pdo-5.6.31-1.w6.x86_64 php56w-mcrypt-5.6.31-1.w6.x86_64 php56w-xml-5.6.31-1.w6.x86_64 php56w-process-5.6.31-1.w6.x86_64 php56w-cli-5.6.31-1.w6.x86_64 ……  已安装PHP，要先将其删除掉。
+yum remove php*  2.安装PHP源 根据自己的系统版本，选择不同的PHP源。 - Centos 5
+rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm   Centos 6  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm   Centos 7  rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  3.PHP安装 根据需求安装PHP版本。 可用先查看一下可用的PHP包，主要是看有什么版本可用安装
+yum list | grep php   以下安装包含一些基本安装包，可以根据需求添加、删减</description>
+    </item>
+    
+  </channel>
+</rss>

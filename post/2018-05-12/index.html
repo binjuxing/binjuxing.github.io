@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+
+<link rel="canonical" href="https://www.binjx.top/post/2018-05-12/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>scss基本语法 - Jayson</title>
+    
+<meta name="description" content="SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束 /* $变量名: 值; */ $width: 110px; /* 普通变量 */ $height: 120px !default; /* 默认变量 */ $base-wdith: $width; /* 变量嵌套 */   变量的使用  $width: 110px; .class{ width: $width; /* width值为 110px */ }   全局变量与局部变量  $color: black; /* 全局变量 */ .class-1{ $color: red; /* 局部变量 只在.class-1中生效 */ color: $color; /* 值为red */ } .class-2{ color: $color; /* 值为black */ }  2.">
+
+<meta property="og:title" content="scss基本语法 - Jayson">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.binjx.top/post/2018-05-12/">
+<meta property="og:image" content="https://www.binjx.topimages/default.png">
+<meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束 /* $变量名: 值; */ $width: 110px; /* 普通变量 */ $height: 120px !default; /* 默认变量 */ $base-wdith: $width; /* 变量嵌套 */   变量的使用  $width: 110px; .class{ width: $width; /* width值为 110px */ }   全局变量与局部变量  $color: black; /* 全局变量 */ .class-1{ $color: red; /* 局部变量 只在.class-1中生效 */ color: $color; /* 值为red */ } .class-2{ color: $color; /* 值为black */ }  2.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Jayson">
+<meta name="twitter:url" content="https://www.binjx.top/post/2018-05-12/">
+<meta name="twitter:title" content="scss基本语法 - Jayson">
+<meta name="twitter:description" content="SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束 /* $变量名: 值; */ $width: 110px; /* 普通变量 */ $height: 120px !default; /* 默认变量 */ $base-wdith: $width; /* 变量嵌套 */   变量的使用  $width: 110px; .class{ width: $width; /* width值为 110px */ }   全局变量与局部变量  $color: black; /* 全局变量 */ .class-1{ $color: red; /* 局部变量 只在.class-1中生效 */ color: $color; /* 值为red */ } .class-2{ color: $color; /* 值为black */ }  2.">
+<meta name="twitter:image" content="https://www.binjx.topimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/www.binjx.top"
+    },
+    "headline": "scss基本语法 - Jayson",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.binjx.topimages\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-05-12T12:21:26JST",
+    "dateModified": "2019-01-12T18:57:16JST",
+    "author": {
+      "@type": "Person",
+      "name": "Jayson"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jayson",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.binjx.topimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。\n 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束\n \/* $变量名: 值; *\/ $width: 110px; \/* 普通变量 *\/ $height: 120px !default; \/* 默认变量 *\/ $base-wdith: $width; \/* 变量嵌套 *\/   变量的使用  $width: 110px; .class{ width: $width; \/* width值为 110px *\/ }   全局变量与局部变量  $color: black; \/* 全局变量 *\/ .class-1{ $color: red; \/* 局部变量 只在.class-1中生效 *\/ color: $color; \/* 值为red *\/ } .class-2{ color: $color; \/* 值为black *\/ }  2."
+  }
+</script>
+
+
+    <link href="https://www.binjx.topcss/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.binjx.top">Jayson</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.binjx.top"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.binjx.toppost/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">scss基本语法</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-12T18:57:16JST">Jan 12, 2019</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.toppost/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">scss基本语法</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<blockquote>
+<p>SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。</p>
+</blockquote>
+
+<h4 id="1-变量">1. 变量</h4>
+
+<ul>
+<li>变量的声明</li>
+</ul>
+
+<blockquote>
+<p>和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束</p>
+</blockquote>
+
+<pre><code class="language-scss">/* $变量名: 值; */
+$width: 110px; /* 普通变量 */
+$height: 120px !default; /* 默认变量 */
+$base-wdith: $width; /* 变量嵌套 */
+</code></pre>
+
+<ul>
+<li>变量的使用</li>
+</ul>
+
+<pre><code class="language-scss">$width: 110px; 
+.class{
+    width: $width; /* width值为 110px */
+}
+</code></pre>
+
+<ul>
+<li>全局变量与局部变量</li>
+</ul>
+
+<pre><code class="language-scss">$color: black; /* 全局变量 */
+.class-1{
+    $color: red; /* 局部变量 只在.class-1中生效 */
+    color: $color; /* 值为red */
+}
+.class-2{
+    color: $color; /* 值为black */
+}
+</code></pre>
+
+<h4 id="2-选择器嵌套">2. 选择器嵌套</h4>
+
+<ul>
+<li>选择器嵌套</li>
+</ul>
+
+<pre><code class="language-scss">.class-1{
+    width: 100px;
+    .class-2{
+        width: 50px;
+    }
+    div{
+        width: 50px;
+    }
+}
+</code></pre>
+
+<ul>
+<li>属性嵌套</li>
+</ul>
+
+<pre><code class="language-scss">.class-1{
+    margin{
+        top: 40px;
+        letf: 20px;
+    }
+}
+</code></pre>
+
+<ul>
+<li>伪类嵌套</li>
+</ul>
+
+<pre><code class="language-scss">/* &amp;指向本身 */
+.class-1{
+    &amp;:before,
+    &amp;:after {
+        content:&quot;&quot;;
+        display: table;
+    }
+    &amp;:nth-child(2n){
+        dispaly:none;
+    }
+}
+</code></pre>
+
+<h4 id="3-mixin-混入">3. mixin 混入</h4>
+
+<ul>
+<li>声明使用</li>
+</ul>
+
+<pre><code class="language-scss">/* 声明 */ 
+@mixin style1{
+    width: 100px;
+    height: 100px;
+    backgroung: blue;
+}
+/* 使用 */
+.c1{
+    @include style1; /* 导入了style1中的样式 */
+}
+</code></pre>
+
+<ul>
+<li>参数</li>
+</ul>
+
+<pre><code class="language-scss">/* 类似函数传参 */ 
+@mixin style2($color){
+    color: $color;
+}
+.c2{
+    @include style2(#fff); 
+}
+/* 带默认值 */ 
+@mixin style3($radius: 5px){
+    border-radius: $radius;
+}
+.c3{
+    @include style3; 
+}
+</code></pre>
+
+<ul>
+<li>多个参数</li>
+</ul>
+
+<pre><code class="language-scss">@mixin style4($width,$height){
+    width: $width;
+    height: $height;
+}
+.c4{
+    @include style4(100px,100px); 
+}
+
+/* 特别参数“…” */
+@mixin box-shadow($shadows...){
+  @if length($shadows) &gt;= 1 {
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+  } @else {
+    $shadows: 0 0 2px rgba(#000,.25);
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+}
+
+.box {
+  @include box-shadow(0 0 1px rgba(#000,.5),0 0 2px rgba(#000,.2));
+}
+</code></pre>
+
+<h4 id="4-继承-extend">4. 继承 @extend</h4>
+
+<pre><code class="language-scss">.class-1{
+    background: skyblud;
+    border-radius: 50%;
+}
+.class-2{
+    width: 200px;
+    height: 200px;
+    @extend .class-1; // 继承了.class-1中的属性
+}
+</code></pre>
+
+<h4 id="5-占位符">5. 占位符 %</h4>
+
+<ul>
+<li>使用占位符%定义的代码块，在其他地方没有继承使用的情况下，是不会编译为css代码的</li>
+</ul>
+
+<pre><code class="language-scss">%style1{
+    text-indent: 2em;
+}
+</code></pre>
+
+<ul>
+<li>使用和继承一样</li>
+</ul>
+
+<pre><code class="language-scss">%style2{
+    text-indent: 2em;
+}
+.class-1{
+    @extend %style2;
+}
+</code></pre>
+
+<h4 id="6-数据类型">6. 数据类型</h4>
+
+<ul>
+<li>数字: 如，1、 2、 13、 10px、100%；</li>
+<li>字符串：有引号字符串或无引号字符串，如，&rdquo;foo&rdquo;、 &lsquo;bar&rsquo;、 baz；</li>
+<li>颜色：如，blue、 #04a3f9、 rgba(255,0,0,0.5)；</li>
+<li>布尔型：如，true、 false；</li>
+<li>空值：如，null；</li>
+
+<li><p>值列表：用空格或者逗号分开，如，1.5em 1em 0 2em 、 Helvetica, Arial, - sans-serif。</p>
+
+<h4 id="7-注释">7. 注释</h4></li>
+
+<li><p>// 用此符号添加的注释，不会出现在编译后的css中</p></li>
+
+<li><p>/*  */ 用此符号添加的注释，会被添加到编译后的css中</p>
+
+<h4 id="8-计算">8. 计算</h4></li>
+
+<li><p>加减乘除</p></li>
+</ul>
+
+<pre><code class="language-scss">.class-1{
+    width: 100px + 100px; // 200px
+    heigth: 300px - 100px; // 200px
+    border-radius: 5px * 2; // 10px
+    margin-left: 100px / 10; // 10px
+}
+</code></pre>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.topcategories/%E5%89%8D%E7%AB%AF/">前端</a></li>
+          
+          <li><a href="https://www.binjx.topcategories/css/">css</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.toptags/css/">css</a></li>
+          
+          <li><a href="https://www.binjx.toptags/scss/">scss</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/post/2018-08-20/" class="list-group-item">在CentOS服务器环境中安装高版本的PHP</a>
+      
+      <a href="https://www.binjx.top/post/2018-05-12/" class="list-group-item">scss基本语法</a>
+      
+      <a href="https://www.binjx.top/post/2017-10-05/" class="list-group-item">如何在GitHub中绑定自己的域名</a>
+      
+      <a href="https://www.binjx.top/post/2017-06-06/" class="list-group-item">CentOS7下LNMP环境配置-服务器配置</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.topcategories/%E5%90%8E%E7%AB%AF" class="list-group-item">后端</a>
+      
+      <a href="https://www.binjx.topcategories/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.topcategories/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.topcategories/%E5%85%B6%E4%BB%96" class="list-group-item">其他</a>
+      
+      <a href="https://www.binjx.topcategories/%E5%89%8D%E7%AB%AF" class="list-group-item">前端</a>
+      
+      <a href="https://www.binjx.topcategories/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.toptags/centos" class="list-group-item">centos</a>
+      
+      <a href="https://www.binjx.toptags/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.toptags/github" class="list-group-item">github</a>
+      
+      <a href="https://www.binjx.toptags/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.toptags/scss" class="list-group-item">scss</a>
+      
+      <a href="https://www.binjx.toptags/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Jayson</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

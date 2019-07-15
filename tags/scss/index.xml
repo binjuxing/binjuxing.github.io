@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scss on Jayson</title>
+    <link>https://www.binjx.top/tags/scss/</link>
+    <description>Recent content in scss on Jayson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 May 2018 12:21:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.binjx.top/tags/scss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>scss基本语法</title>
+      <link>https://www.binjx.top/post/2018-05-12/</link>
+      <pubDate>Sat, 12 May 2018 12:21:26 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2018-05-12/</guid>
+      <description>SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。
+ 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束
+ /* $变量名: 值; */ $width: 110px; /* 普通变量 */ $height: 120px !default; /* 默认变量 */ $base-wdith: $width; /* 变量嵌套 */   变量的使用  $width: 110px; .class{ width: $width; /* width值为 110px */ }   全局变量与局部变量  $color: black; /* 全局变量 */ .class-1{ $color: red; /* 局部变量 只在.class-1中生效 */ color: $color; /* 值为red */ } .class-2{ color: $color; /* 值为black */ }  2.</description>
+    </item>
+    
+  </channel>
+</rss>

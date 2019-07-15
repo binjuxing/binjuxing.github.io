@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on Jayson</title>
+    <link>https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on Jayson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Jun 2017 13:22:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7下LNMP环境配置-服务器配置</title>
+      <link>https://www.binjx.top/post/2017-06-06/</link>
+      <pubDate>Tue, 06 Jun 2017 13:22:08 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2017-06-06/</guid>
+      <description>LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。
+ LNMP 环境代表 Linux 系统下 Nginx + MySQL + PHP 网站服务器架构。
+ 使用CentOS7中的yum源安装
+Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Jayson</title>
+    <link>https://www.binjx.top/post/</link>
+    <description>Recent content in Posts on Jayson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Aug 2018 19:35:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.binjx.top/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在CentOS服务器环境中安装高版本的PHP</title>
+      <link>https://www.binjx.top/post/2018-08-20/</link>
+      <pubDate>Mon, 20 Aug 2018 19:35:11 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2018-08-20/</guid>
+      <description>在Centos系统中，通过yum命令安装PHP是非常简单的，简单是简单了，但这样安装的版本较低，一般都是5.4版本，即使在Centos7中亦是如此。 有时候，我们的项目中是基于更高版本的PHP,如PHP5.6，甚至是PHP7.0，显然5.4就不适用了。 所以，我们就要根据自己的需求去安装合适的PHP版本。
+ 如何安装 1.检查系统中是否安装了PHP 在shell中使用以下命令
+rpm -qa|grep php  如果已经安装了PHP,就会列出所安装的包，如果没有则直接进入第二步。
+php56w-fpm-5.6.31-1.w6.x86_64 php-tcpdf-dejavu-sans-fonts-6.2.13-1.el6.noarch php56w-common-5.6.31-1.w6.x86_64 php56w-ldap-5.6.31-1.w6.x86_64 php-fedora-autoloader-1.0.0-1.el6.noarch php56w-pdo-5.6.31-1.w6.x86_64 php56w-mcrypt-5.6.31-1.w6.x86_64 php56w-xml-5.6.31-1.w6.x86_64 php56w-process-5.6.31-1.w6.x86_64 php56w-cli-5.6.31-1.w6.x86_64 ……  已安装PHP，要先将其删除掉。
+yum remove php*  2.安装PHP源 根据自己的系统版本，选择不同的PHP源。 - Centos 5
+rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm   Centos 6  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm   Centos 7  rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  3.PHP安装 根据需求安装PHP版本。 可用先查看一下可用的PHP包，主要是看有什么版本可用安装
+yum list | grep php   以下安装包含一些基本安装包，可以根据需求添加、删减</description>
+    </item>
+    
+    <item>
+      <title>scss基本语法</title>
+      <link>https://www.binjx.top/post/2018-05-12/</link>
+      <pubDate>Sat, 12 May 2018 12:21:26 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2018-05-12/</guid>
+      <description>SCSS（Sassy CSS）是sass延伸版本，其语法和结构更加接近css，更容易让前端程序员接受。
+ 1. 变量  变量的声明   和php变量声明类似,以美元符合$开头,后跟变量名,变量赋值用冒号:，:右边为值，以分号;结束
+ /* $变量名: 值; */ $width: 110px; /* 普通变量 */ $height: 120px !default; /* 默认变量 */ $base-wdith: $width; /* 变量嵌套 */   变量的使用  $width: 110px; .class{ width: $width; /* width值为 110px */ }   全局变量与局部变量  $color: black; /* 全局变量 */ .class-1{ $color: red; /* 局部变量 只在.class-1中生效 */ color: $color; /* 值为red */ } .class-2{ color: $color; /* 值为black */ }  2.</description>
+    </item>
+    
+    <item>
+      <title>如何在GitHub中绑定自己的域名</title>
+      <link>https://www.binjx.top/post/2017-10-05/</link>
+      <pubDate>Sun, 15 Oct 2017 21:05:13 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2017-10-05/</guid>
+      <description> GitHub是一个知名的软件项目托管平台及开源协作社区，我们在上面找到各种开源软件源码，也可以从中大致看出目前较为主流、热门的软件及技术。对技术人员来说，这是一个庞大的资料库，也是一个重要的学习平台。
+ 那么如何在GitHub中绑定自己的域名？
+步骤其实很简单：
+ 在域名绑定之前，你需要有自己github主页，如：example.github.io，没有的话，可以到GitHub官网注册并建立自己的项目。 同时，你还需要拥有自己的域名，如：example.com。
+ 创建一个CNAME文件（文件名叫CNAME，没有文件后缀），文件内容为自己的域名，如：example.com, 也可也用二级域名：www.example.com，github.example.com等，保存后，将文件上传至你的GitHub主页项目中（根目录）。
+ 当然，如果你嫌这样麻烦，也可以直接在GitHub主页项目中新建CNAME文件，填入你的域名，然后提交更改即可。
+ 前往你的DNS服务商，阿里云、腾讯云或是其它云，在你的域名解析中，新建一个CNAME解析至你的github page个人主页地址，如用一级域名example.com，其解析类型为：CNAME，主机记录为：@，记录值为：xiangming.github.io. ,这里的记录值为你的GitHub主页访问地址，地址后面多了个点，一般添加会自动添加，没有的话记得自己加上。
+   OK，我们要做的工作就这么多了，接下来等待解析生效就行了，一般几分钟就可以使用你自己的域名（example.com）访问你的GitHub主页。
+ </description>
+    </item>
+    
+    <item>
+      <title>CentOS7下LNMP环境配置-服务器配置</title>
+      <link>https://www.binjx.top/post/2017-06-06/</link>
+      <pubDate>Tue, 06 Jun 2017 13:22:08 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2017-06-06/</guid>
+      <description>LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。
+ LNMP 环境代表 Linux 系统下 Nginx + MySQL + PHP 网站服务器架构。
+ 使用CentOS7中的yum源安装
+Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.</description>
+    </item>
+    
+  </channel>
+</rss>

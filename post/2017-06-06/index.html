@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+
+<link rel="canonical" href="https://www.binjx.top/post/2017-06-06/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>CentOS7下LNMP环境配置-服务器配置 - Jayson</title>
+    
+<meta name="description" content="LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。 LNMP 环境代表 Linux 系统下 Nginx &#43; MySQL &#43; PHP 网站服务器架构。 使用CentOS7中的yum源安装Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.">
+
+<meta property="og:title" content="CentOS7下LNMP环境配置-服务器配置 - Jayson">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.binjx.top/post/2017-06-06/">
+<meta property="og:image" content="https://www.binjx.topimages/default.png">
+<meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。 LNMP 环境代表 Linux 系统下 Nginx &#43; MySQL &#43; PHP 网站服务器架构。 使用CentOS7中的yum源安装Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Jayson">
+<meta name="twitter:url" content="https://www.binjx.top/post/2017-06-06/">
+<meta name="twitter:title" content="CentOS7下LNMP环境配置-服务器配置 - Jayson">
+<meta name="twitter:description" content="LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。 LNMP 环境代表 Linux 系统下 Nginx &#43; MySQL &#43; PHP 网站服务器架构。 使用CentOS7中的yum源安装Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.">
+<meta name="twitter:image" content="https://www.binjx.topimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/www.binjx.top"
+    },
+    "headline": "CentOS7下LNMP环境配置-服务器配置 - Jayson",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.binjx.topimages\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2017-06-06T13:22:08JST",
+    "dateModified": "2018-03-12T20:14:20JST",
+    "author": {
+      "@type": "Person",
+      "name": "Jayson"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jayson",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.binjx.topimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。\n LNMP 环境代表 Linux 系统下 Nginx \x2b MySQL \x2b PHP 网站服务器架构。\n 使用CentOS7中的yum源安装\nNginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http:\/\/nginx.org\/packages\/centos\/7\/noarch\/RPMS\/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx."
+  }
+</script>
+
+
+    <link href="https://www.binjx.topcss/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.binjx.top">Jayson</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.binjx.top"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.binjx.toppost/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">CentOS7下LNMP环境配置-服务器配置</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-03-12T20:14:20JST">Mar 12, 2018</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.toppost/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">CentOS7下LNMP环境配置-服务器配置</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<p><img src="/uploads/article/20171030/59f699b0237c6.jpg" alt="" />
+LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。</p>
+
+<blockquote>
+<p>LNMP 环境代表 Linux 系统下 Nginx + MySQL + PHP 网站服务器架构。</p>
+</blockquote>
+
+<p>使用CentOS7中的yum源安装</p>
+
+<h2 id="nginx-安装">Nginx 安装</h2>
+
+<h5 id="1-使用yum安装nginx">1.使用yum安装Nginx</h5>
+
+<ul>
+<li>若没有Nginx源 或想安装比较新的版本可下载更新Nginx源</li>
+</ul>
+
+<pre><code class="language-shell">rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+</code></pre>
+
+<ul>
+<li>安装</li>
+</ul>
+
+<pre><code class="language-shell">yum -y install nginx
+</code></pre>
+
+<h5 id="2-nginx启动">2.Nginx启动</h5>
+
+<pre><code class="language-shell">service nginx start
+# 或
+systemctl start nginx.service
+# 若不支持service 命令 可用systemctl命令
+</code></pre>
+
+<h5 id="3-设置开机启动">3.设置开机启动</h5>
+
+<pre><code class="language-shell">systemctl enable nginx.service
+</code></pre>
+
+<h5 id="4-其他命令">4.其他命令</h5>
+
+<pre><code class="language-shell">service nginx restart # 重启Nginx
+service nginx stop # 停止Nginx服务
+nginx -t # 查看Nginx配置文件路径
+systemctl list-units --type=service # 查看开机启动项
+systemctl disable nginx.service # 停止开机启动
+nginx -v # 查看安装版本
+</code></pre>
+
+<h5 id="5-测试nginx服务是否正常运行">5.测试Nginx服务是否正常运行</h5>
+
+<pre><code class="language-shell">wget http://127.0.0.1
+</code></pre>
+
+<blockquote>
+<p>正常运行，输出以下结果：</p>
+</blockquote>
+
+<pre><code class="language-shell">--2017-10-28 13:19:31--  http://127.0.0.1/
+Connecting to 127.0.0.1:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+    [ &lt;=&gt;                                      ] 53,024      --.-K/s   in 0s      
+2017-10-28 13:19:31 (190 MB/s) - ‘index.html’ saved [53024]
+</code></pre>
+
+<h2 id="php-安装">PHP 安装</h2>
+
+<h5 id="1-安装php及其依赖-扩展-版本5-4-16">1.安装PHP及其依赖、扩展,版本5.4.16</h5>
+
+<pre><code class="language-shell">yum -y install php php-fpm lighttpd-fastcgi php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-mssql php-snmp php-soap
+</code></pre>
+
+<h5 id="2-启动php-php-fpm-服务">2.启动PHP(php-fpm)服务</h5>
+
+<pre><code class="language-shell">service php-fpm start
+systemctl enable php-fpm.service # 加入开机启动项
+</code></pre>
+
+<h5 id="3-php默认服务ip端口">3.PHP默认服务IP端口</h5>
+
+<pre><code class="language-shell"># 查看默认配置
+cat /etc/php-fpm.d/www.conf |grep -i 'listen ='
+# 输出结果
+listen = 127.0.0.1:9000
+</code></pre>
+
+<h5 id="4-修改nginx配置文件-实现php转发">4.修改Nginx配置文件，实现PHP转发</h5>
+
+<ul>
+<li>编辑Nginx配置文件</li>
+</ul>
+
+<pre><code class="language-shell">vi /etc/nginx/nginx.conf
+</code></pre>
+
+<ul>
+<li>进入编辑器，按I或者Insert键进入Insert模式，修改server中的配置参数。注：#号为注释符</li>
+</ul>
+
+<pre><code class="language-shell">server {
+    # 监听80端口
+    listen       80 default_server;
+    listen       [::]:80 default_server;
+    # 服务名称 可自定义已经解析到本服务器的域名，如www.binjx.cn
+    server_name  localhost;
+    # 网站根目录 绝对路径 可自定义
+    root         /usr/share/nginx/html;
+    # Load configuration files for the default server block.
+    # include /etc/nginx/default.d/*.conf;
+
+    # 修改、添加如下代码 start
+    location / {
+    index  index.php index.html index.htm;
+    }
+    location ~ \.php$ {
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index   index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+    }
+    # 修改、添加 end
+    error_page 404 /404.html;
+    location = /40x.html {
+    }
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+    }
+}
+</code></pre>
+
+<ul>
+<li>编辑完成，按Esc键退出Insert模式，再按Shift+Q键，此时可以选择是否保存修改，操作命令：q 退出，wq或x保存退出，q！不保存强制退出。</li>
+</ul>
+
+<pre><code class="language-shell">Entering Ex mode.  Type &quot;visual&quot; to go to Normal mode.
+：wq
+</code></pre>
+
+<ul>
+<li>检测配置</li>
+</ul>
+
+<pre><code class="language-shell">service nignx restart
+</code></pre>
+
+<ul>
+<li>重启Nginx服务器，配置生效</li>
+</ul>
+
+<pre><code class="language-shell">service nignx restart
+</code></pre>
+
+<h2 id="mysql-安装">MySql 安装</h2>
+
+<blockquote>
+<p>在CentOs7的yum源中，默认的数据库已经不是MySQL，而是MariaDB，MariaDB兼容MySql，甚至更优于MySQL。有兴趣的朋友可以看一下两者的区别。<a href="https://yq.aliyun.com/ziliao/92489" title="浅谈MySQL和mariadb区别_mariadb">浅谈MySQL和mariadb区别_mariadb</a></p>
+</blockquote>
+
+<h5 id="1-安装mysql">1.安装MySQL</h5>
+
+<pre><code class="language-shell">yum -y install mysql mysql-server mysql-devel
+</code></pre>
+
+<p>2.启动服务</p>
+
+<pre><code class="language-shell">service mariadb start
+# 设置开启启动
+systemctl enable mariadb
+</code></pre>
+
+<h5 id="3-mariadb相关配置">3.MariaDB相关配置</h5>
+
+<pre><code class="language-shell">mysql_secure_installation
+</code></pre>
+
+<ul>
+<li>进入设置</li>
+</ul>
+
+<pre><code class="language-shell">Enter current password for root (enter for none): # 初次运行直接回车
+设置密码
+Set root password? [Y/n] # 是否设置root用户密码，输入y(必须的)
+New password: #  设置root用户密码
+Re-enter new password: # 再次输入密码
+# 其他配置
+Remove anonymous users? [Y/n] # 是否删除匿名用户，回车
+Disallow root login remotely? [Y/n] # 是否禁止root远程登录,回车
+Remove test database and access to it? [Y/n] #  是否删除test数据库，回车
+Reload privilege tables now? [Y/n] #  是否重新加载权限表，回车
+</code></pre>
+
+<ul>
+<li>初始化完成，测试登录MariaDB</li>
+</ul>
+
+<pre><code class="language-shell">mysql -uroot -p
+# 回车后，输入上面设置的秘密
+Enter password:
+</code></pre>
+
+<ul>
+<li>成功，则显示如下信息并进入数据库</li>
+</ul>
+
+<pre><code class="language-shell">Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2374
+Server version: 5.5.56-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]&gt; 
+</code></pre>
+
+<blockquote>
+<p>退出命令：exit，或者直接Ctrl+c</p>
+</blockquote>
+
+<ul>
+<li><p>4.MariaDB字符集配置</p></li>
+
+<li><p>修改/etc/my.cnf 文件</p></li>
+</ul>
+
+<pre><code class="language-shell">vi /etc/my.cnf
+</code></pre>
+
+<blockquote>
+<p>在[mysqld]标签下添加</p>
+</blockquote>
+
+<pre><code class="language-shell">[mysqld]
+init_connect='SET collation_connection = utf8_unicode_ci' 
+init_connect='SET NAMES utf8' 
+character-set-server=utf8 
+collation-server=utf8_unicode_ci 
+skip-character-set-client-handshake
+</code></pre>
+
+<ul>
+<li>修改/etc/my.cnf.d/client.cnf 文件</li>
+</ul>
+
+<pre><code class="language-shell">vi /etc/my.cnf.d/client.cnf
+</code></pre>
+
+<blockquote>
+<p>在[client]中添加</p>
+</blockquote>
+
+<pre><code class="language-shell">[client]
+default-character-set=utf8
+</code></pre>
+
+<ul>
+<li>修改 /etc/my.cnf.d/mysql-clients.cnf 文件</li>
+</ul>
+
+<pre><code class="language-shell">vi /etc/my.cnf.d/mysql-clients.cnf
+</code></pre>
+
+<blockquote>
+<p>在[mysql]中添加</p>
+</blockquote>
+
+<pre><code class="language-shell">[mysql]
+default-character-set=utf8
+</code></pre>
+
+<blockquote>
+<p>全部修改保存后，重启MariaDB，配置才会生效</p>
+</blockquote>
+
+<pre><code class="language-shell">service mariadb restart
+</code></pre>
+
+<blockquote>
+<p>可登录MariaDB数据库中查看字符集</p>
+</blockquote>
+
+<pre><code class="language-shell">mysql&gt; show variables like &quot;%character%&quot;;show variables like &quot;%collation%&quot;;
+</code></pre>
+
+<p>至此，LNMP服务器环境基本上已经搭建完成了（如果顺利的话），第一次尝试，难免遇到各种坑，其实遇到坑是好事，我们可以从中吸取更多的经验，找到各种解决问题的办法，这样我们才能更加从容的面对日后所遇到的问题。</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.topcategories/%E5%90%8E%E7%AB%AF/">后端</a></li>
+          
+          <li><a href="https://www.binjx.topcategories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.toptags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></li>
+          
+          <li><a href="https://www.binjx.toptags/centos/">centos</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/post/2018-08-20/" class="list-group-item">在CentOS服务器环境中安装高版本的PHP</a>
+      
+      <a href="https://www.binjx.top/post/2018-05-12/" class="list-group-item">scss基本语法</a>
+      
+      <a href="https://www.binjx.top/post/2017-10-05/" class="list-group-item">如何在GitHub中绑定自己的域名</a>
+      
+      <a href="https://www.binjx.top/post/2017-06-06/" class="list-group-item">CentOS7下LNMP环境配置-服务器配置</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.topcategories/%E5%90%8E%E7%AB%AF" class="list-group-item">后端</a>
+      
+      <a href="https://www.binjx.topcategories/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.topcategories/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.topcategories/%E5%85%B6%E4%BB%96" class="list-group-item">其他</a>
+      
+      <a href="https://www.binjx.topcategories/%E5%89%8D%E7%AB%AF" class="list-group-item">前端</a>
+      
+      <a href="https://www.binjx.topcategories/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.toptags/centos" class="list-group-item">centos</a>
+      
+      <a href="https://www.binjx.toptags/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.toptags/github" class="list-group-item">github</a>
+      
+      <a href="https://www.binjx.toptags/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.toptags/scss" class="list-group-item">scss</a>
+      
+      <a href="https://www.binjx.toptags/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Jayson</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
