@@ -14,22 +14,22 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>在CentOS服务器环境中安装高版本的PHP - Jayson</title>
+    <title>在CentOS服务器环境中安装高版本的PHP - 宾巨兴-个人博客</title>
     
 <meta name="description" content="在Centos系统中，通过yum命令安装PHP是非常简单的，简单是简单了，但这样安装的版本较低，一般都是5.4版本，即使在Centos7中亦是如此。 有时候，我们的项目中是基于更高版本的PHP,如PHP5.6，甚至是PHP7.0，显然5.4就不适用了。 所以，我们就要根据自己的需求去安装合适的PHP版本。 如何安装 1.检查系统中是否安装了PHP 在shell中使用以下命令rpm -qa|grep php  如果已经安装了PHP,就会列出所安装的包，如果没有则直接进入第二步。php56w-fpm-5.6.31-1.w6.x86_64 php-tcpdf-dejavu-sans-fonts-6.2.13-1.el6.noarch php56w-common-5.6.31-1.w6.x86_64 php56w-ldap-5.6.31-1.w6.x86_64 php-fedora-autoloader-1.0.0-1.el6.noarch php56w-pdo-5.6.31-1.w6.x86_64 php56w-mcrypt-5.6.31-1.w6.x86_64 php56w-xml-5.6.31-1.w6.x86_64 php56w-process-5.6.31-1.w6.x86_64 php56w-cli-5.6.31-1.w6.x86_64 ……  已安装PHP，要先将其删除掉。yum remove php*  2.安装PHP源 根据自己的系统版本，选择不同的PHP源。 - Centos 5rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm   Centos 6  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm   Centos 7  rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  3.PHP安装 根据需求安装PHP版本。 可用先查看一下可用的PHP包，主要是看有什么版本可用安装yum list | grep php   以下安装包含一些基本安装包，可以根据需求添加、删减">
 
-<meta property="og:title" content="在CentOS服务器环境中安装高版本的PHP - Jayson">
+<meta property="og:title" content="在CentOS服务器环境中安装高版本的PHP - 宾巨兴-个人博客">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.binjx.top/post/2018-08-20/">
 <meta property="og:image" content="https://www.binjx.top/images/default.png">
-<meta property="og:site_name" content="Jayson">
+<meta property="og:site_name" content="宾巨兴-个人博客">
 <meta property="og:description" content="在Centos系统中，通过yum命令安装PHP是非常简单的，简单是简单了，但这样安装的版本较低，一般都是5.4版本，即使在Centos7中亦是如此。 有时候，我们的项目中是基于更高版本的PHP,如PHP5.6，甚至是PHP7.0，显然5.4就不适用了。 所以，我们就要根据自己的需求去安装合适的PHP版本。 如何安装 1.检查系统中是否安装了PHP 在shell中使用以下命令rpm -qa|grep php  如果已经安装了PHP,就会列出所安装的包，如果没有则直接进入第二步。php56w-fpm-5.6.31-1.w6.x86_64 php-tcpdf-dejavu-sans-fonts-6.2.13-1.el6.noarch php56w-common-5.6.31-1.w6.x86_64 php56w-ldap-5.6.31-1.w6.x86_64 php-fedora-autoloader-1.0.0-1.el6.noarch php56w-pdo-5.6.31-1.w6.x86_64 php56w-mcrypt-5.6.31-1.w6.x86_64 php56w-xml-5.6.31-1.w6.x86_64 php56w-process-5.6.31-1.w6.x86_64 php56w-cli-5.6.31-1.w6.x86_64 ……  已安装PHP，要先将其删除掉。yum remove php*  2.安装PHP源 根据自己的系统版本，选择不同的PHP源。 - Centos 5rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm   Centos 6  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm   Centos 7  rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  3.PHP安装 根据需求安装PHP版本。 可用先查看一下可用的PHP包，主要是看有什么版本可用安装yum list | grep php   以下安装包含一些基本安装包，可以根据需求添加、删减">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="Jayson">
+<meta name="twitter:site" content="宾巨兴-个人博客">
 <meta name="twitter:url" content="https://www.binjx.top/post/2018-08-20/">
-<meta name="twitter:title" content="在CentOS服务器环境中安装高版本的PHP - Jayson">
+<meta name="twitter:title" content="在CentOS服务器环境中安装高版本的PHP - 宾巨兴-个人博客">
 <meta name="twitter:description" content="在Centos系统中，通过yum命令安装PHP是非常简单的，简单是简单了，但这样安装的版本较低，一般都是5.4版本，即使在Centos7中亦是如此。 有时候，我们的项目中是基于更高版本的PHP,如PHP5.6，甚至是PHP7.0，显然5.4就不适用了。 所以，我们就要根据自己的需求去安装合适的PHP版本。 如何安装 1.检查系统中是否安装了PHP 在shell中使用以下命令rpm -qa|grep php  如果已经安装了PHP,就会列出所安装的包，如果没有则直接进入第二步。php56w-fpm-5.6.31-1.w6.x86_64 php-tcpdf-dejavu-sans-fonts-6.2.13-1.el6.noarch php56w-common-5.6.31-1.w6.x86_64 php56w-ldap-5.6.31-1.w6.x86_64 php-fedora-autoloader-1.0.0-1.el6.noarch php56w-pdo-5.6.31-1.w6.x86_64 php56w-mcrypt-5.6.31-1.w6.x86_64 php56w-xml-5.6.31-1.w6.x86_64 php56w-process-5.6.31-1.w6.x86_64 php56w-cli-5.6.31-1.w6.x86_64 ……  已安装PHP，要先将其删除掉。yum remove php*  2.安装PHP源 根据自己的系统版本，选择不同的PHP源。 - Centos 5rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm   Centos 6  rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm   Centos 7  rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  3.PHP安装 根据需求安装PHP版本。 可用先查看一下可用的PHP包，主要是看有什么版本可用安装yum list | grep php   以下安装包含一些基本安装包，可以根据需求添加、删减">
 <meta name="twitter:image" content="https://www.binjx.top/images/default.png">
 
@@ -42,7 +42,7 @@
       "@type": "WebPage",
       "@id":"https:\/\/www.binjx.top\/"
     },
-    "headline": "在CentOS服务器环境中安装高版本的PHP - Jayson",
+    "headline": "在CentOS服务器环境中安装高版本的PHP - 宾巨兴-个人博客",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/www.binjx.top\/images\/default.png",
@@ -53,11 +53,11 @@
     "dateModified": "2019-02-12T21:40:10JST",
     "author": {
       "@type": "Person",
-      "name": "Jayson"
+      "name": "宾巨兴-个人博客"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Jayson",
+      "name": "宾巨兴-个人博客",
       "logo": {
         "@type": "ImageObject",
         "url": "https:\/\/www.binjx.top\/images/logo.png",
@@ -90,7 +90,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.binjx.top/">Jayson</a>
+            <a class="navbar-brand" href="https://www.binjx.top/">宾巨兴-个人博客</a>
           </div>
 
           
@@ -349,7 +349,7 @@ systemctl enable php-fpm.service
 
     <footer class="l-footer">
       <div class="container">
-        <p><span class="h-logo">&copy; Jayson</span></p>
+        <p><span class="h-logo">&copy; 宾巨兴-个人博客</span></p>
         <aside>
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
