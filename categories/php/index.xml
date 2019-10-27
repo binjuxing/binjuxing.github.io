@@ -6,10 +6,21 @@
     <description>Recent content in PHP on 宾巨兴-个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Aug 2018 19:35:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 22:23:45 +0800</lastBuildDate>
     
 	<atom:link href="https://www.binjx.top/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>phpMyAdmin安装</title>
+      <link>https://www.binjx.top/post/2019-03-25/</link>
+      <pubDate>Mon, 25 Mar 2019 22:23:45 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/post/2019-03-25/</guid>
+      <description> 一、下载phpMyAdmin，并解压  cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下  cd /www   下载 &amp;gt; 下载地址 https://www.phpmyadmin.net/downloads/  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip   解压  unzip phpMyAdmin-4.9.1-all-languages.zip   删除压缩包  rm phpMyAdmin-4.9.1-all-languages.zip  二、其他设置  如遇 ./tmp/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限
+ 密码短语问题。编辑文件phpMyAdmin/config.sample.inc.php和phpMyAdmin/libraries/config.default.php，修改此项：$cfg[&amp;lsquo;blowfish_secret&amp;rsquo;] = &amp;ldquo;，在空字符
+  </description>
+    </item>
     
     <item>
       <title>在CentOS服务器环境中安装高版本的PHP</title>

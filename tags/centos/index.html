@@ -62,6 +62,29 @@
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-05-06T20:47:16JST">May 6, 2019</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.top/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://www.binjx.top/post/2019-03-18/">在CentOS7中安装MySQL（可选版本）</a></h2>
+  </header>
+
+  
+  <div class="summary">1.配置Mysql rpm源  rpm下载链接 http://repo.mysql.com/yum/ 版本（5.6~8.0）根据自己的系统选择要安装的版本
+  5.7 版本  rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start // 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：
+ [mysqld] character_set_server=utf8 init_connect='SET NAMES utf8'   修改保存后，重启数据库  service mysqld restart // 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like &lsquo;%character%&rsquo;; 查看默认编码  5.</div>
+
+  
+  <footer>
+    <a href="https://www.binjx.top/post/2019-03-18/" title="在CentOS7中安装MySQL（可选版本）">Read More…</a>
+  </footer>
+  
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-12T21:40:10JST">Feb 12, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.top/post/">post</a></li>
       
@@ -126,6 +149,10 @@ Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的�
     </div>
     <div class="list-group">
       
+      <a href="https://www.binjx.top/post/2019-03-25/" class="list-group-item">phpMyAdmin安装</a>
+      
+      <a href="https://www.binjx.top/post/2019-03-18/" class="list-group-item">在CentOS7中安装MySQL（可选版本）</a>
+      
       <a href="https://www.binjx.top/post/2018-08-20/" class="list-group-item">在CentOS服务器环境中安装高版本的PHP</a>
       
       <a href="https://www.binjx.top/post/2018-05-12/" class="list-group-item">scss基本语法</a>
@@ -146,9 +173,11 @@ Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的�
       
       <a href="https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF" class="list-group-item">后端</a>
       
+      <a href="https://www.binjx.top/categories/php" class="list-group-item">php</a>
+      
       <a href="https://www.binjx.top/categories/css" class="list-group-item">css</a>
       
-      <a href="https://www.binjx.top/categories/php" class="list-group-item">php</a>
+      <a href="https://www.binjx.top/categories/mysql" class="list-group-item">mysql</a>
       
       <a href="https://www.binjx.top/categories/%E5%85%B6%E4%BB%96" class="list-group-item">其他</a>
       
@@ -167,11 +196,13 @@ Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的�
       
       <a href="https://www.binjx.top/tags/centos" class="list-group-item">centos</a>
       
+      <a href="https://www.binjx.top/tags/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://www.binjx.top/tags/php" class="list-group-item">php</a>
+      
       <a href="https://www.binjx.top/tags/css" class="list-group-item">css</a>
       
       <a href="https://www.binjx.top/tags/github" class="list-group-item">github</a>
-      
-      <a href="https://www.binjx.top/tags/php" class="list-group-item">php</a>
       
       <a href="https://www.binjx.top/tags/scss" class="list-group-item">scss</a>
       

@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.55.6" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.binjx.top/categories/mysql/index.xml">
 
-<link rel="canonical" href="https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+<link rel="canonical" href="https://www.binjx.top/categories/mysql/">
 
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>服务器 - 宾巨兴-个人博客</title>
+    <title>MySQL - 宾巨兴-个人博客</title>
     
     <link href="https://www.binjx.top/css/styles.css" rel="stylesheet">
     
@@ -53,7 +53,7 @@
 
     
     <header class="page-header">
-      <h1>服务器</h1>
+      <h1>MySQL</h1>
     </header>
     
 
@@ -62,22 +62,21 @@
       <li><article class="li">
   <header>
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-03-12T20:14:20JST">Mar 12, 2018</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-05-06T20:47:16JST">May 6, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.top/post/">post</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://www.binjx.top/post/2017-06-06/">CentOS7下LNMP环境配置-服务器配置</a></h2>
+    <h2 class="title"><a href="https://www.binjx.top/post/2019-03-18/">在CentOS7中安装MySQL（可选版本）</a></h2>
   </header>
 
   
-  <div class="summary">LNMP 环境是当前比较流行的网站服务器构架，各大云服务商均有相应的集成环境，使用比较方便。本文介绍的是如何在一台未安装集成环境的服务器中配置LNMP 环境。
- LNMP 环境代表 Linux 系统下 Nginx + MySQL + PHP 网站服务器架构。
- 使用CentOS7中的yum源安装
-Nginx 安装 1.使用yum安装Nginx  若没有Nginx源 或想安装比较新的版本可下载更新Nginx源  rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm   安装  yum -y install nginx  2.Nginx启动 service nginx start # 或 systemctl start nginx.service # 若不支持service 命令 可用systemctl命令  3.设置开机启动 systemctl enable nginx.service  4.其他命令 service nginx restart # 重启Nginx service nginx stop # 停止Nginx服务 nginx -t # 查看Nginx配置文件路径 systemctl list-units --type=service # 查看开机启动项 systemctl disable nginx.</div>
+  <div class="summary">1.配置Mysql rpm源  rpm下载链接 http://repo.mysql.com/yum/ 版本（5.6~8.0）根据自己的系统选择要安装的版本
+  5.7 版本  rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start // 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：
+ [mysqld] character_set_server=utf8 init_connect='SET NAMES utf8'   修改保存后，重启数据库  service mysqld restart // 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like &lsquo;%character%&rsquo;; 查看默认编码  5.</div>
 
   
   <footer>
-    <a href="https://www.binjx.top/post/2017-06-06/" title="CentOS7下LNMP环境配置-服务器配置">Read More…</a>
+    <a href="https://www.binjx.top/post/2019-03-18/" title="在CentOS7中安装MySQL（可选版本）">Read More…</a>
   </footer>
   
 </article>

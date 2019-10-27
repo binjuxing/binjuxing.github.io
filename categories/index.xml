@@ -6,7 +6,7 @@
     <description>Recent content in Categories on 宾巨兴-个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Aug 2018 19:35:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 22:23:45 +0800</lastBuildDate>
     
 	<atom:link href="https://www.binjx.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>PHP</title>
       <link>https://www.binjx.top/categories/php/</link>
-      <pubDate>Mon, 20 Aug 2018 19:35:11 +0800</pubDate>
+      <pubDate>Mon, 25 Mar 2019 22:23:45 +0800</pubDate>
       
       <guid>https://www.binjx.top/categories/php/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>后端</title>
       <link>https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF/</link>
-      <pubDate>Mon, 20 Aug 2018 19:35:11 +0800</pubDate>
+      <pubDate>Mon, 25 Mar 2019 22:23:45 +0800</pubDate>
       
       <guid>https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://www.binjx.top/categories/mysql/</link>
+      <pubDate>Mon, 18 Mar 2019 20:15:03 +0800</pubDate>
+      
+      <guid>https://www.binjx.top/categories/mysql/</guid>
       <description></description>
     </item>
     

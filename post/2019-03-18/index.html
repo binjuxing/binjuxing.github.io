@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+
+<link rel="canonical" href="https://www.binjx.top/post/2019-03-18/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>在CentOS7中安装MySQL（可选版本） - 宾巨兴-个人博客</title>
+    
+<meta name="description" content="1.配置Mysql rpm源  rpm下载链接 http://repo.mysql.com/yum/ 版本（5.6~8.0）根据自己的系统选择要安装的版本  5.7 版本  rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start // 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示： [mysqld] character_set_server=utf8 init_connect=&#39;SET NAMES utf8&#39;   修改保存后，重启数据库  service mysqld restart // 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like &amp;lsquo;%character%&amp;rsquo;; 查看默认编码  5.">
+
+<meta property="og:title" content="在CentOS7中安装MySQL（可选版本） - 宾巨兴-个人博客">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.binjx.top/post/2019-03-18/">
+<meta property="og:image" content="https://www.binjx.top/images/default.png">
+<meta property="og:site_name" content="宾巨兴-个人博客">
+<meta property="og:description" content="1.配置Mysql rpm源  rpm下载链接 http://repo.mysql.com/yum/ 版本（5.6~8.0）根据自己的系统选择要安装的版本  5.7 版本  rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start // 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示： [mysqld] character_set_server=utf8 init_connect=&#39;SET NAMES utf8&#39;   修改保存后，重启数据库  service mysqld restart // 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like &amp;lsquo;%character%&amp;rsquo;; 查看默认编码  5.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="宾巨兴-个人博客">
+<meta name="twitter:url" content="https://www.binjx.top/post/2019-03-18/">
+<meta name="twitter:title" content="在CentOS7中安装MySQL（可选版本） - 宾巨兴-个人博客">
+<meta name="twitter:description" content="1.配置Mysql rpm源  rpm下载链接 http://repo.mysql.com/yum/ 版本（5.6~8.0）根据自己的系统选择要安装的版本  5.7 版本  rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start // 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示： [mysqld] character_set_server=utf8 init_connect=&#39;SET NAMES utf8&#39;   修改保存后，重启数据库  service mysqld restart // 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like &amp;lsquo;%character%&amp;rsquo;; 查看默认编码  5.">
+<meta name="twitter:image" content="https://www.binjx.top/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/www.binjx.top\/"
+    },
+    "headline": "在CentOS7中安装MySQL（可选版本） - 宾巨兴-个人博客",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.binjx.top\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-03-18T20:15:03JST",
+    "dateModified": "2019-05-06T20:47:16JST",
+    "author": {
+      "@type": "Person",
+      "name": "宾巨兴-个人博客"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "宾巨兴-个人博客",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.binjx.top\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "1.配置Mysql rpm源  rpm下载链接 http:\/\/repo.mysql.com\/yum\/ 版本（5.6~8.0）根据自己的系统选择要安装的版本\n  5.7 版本  rpm -ivh http:\/\/repo.mysql.com\/yum\/mysql-5.7-community\/el\/7\/x86_64\/mysql57-community-release-el7-10.noarch.rpm   8.0 版本  rpm -ivh http:\/\/repo.mysql.com\/yum\/mysql-8.0-community\/el\/7\/x86_64\/mysql80-community-release-el7-3.noarch.rpm  2.用yum命令安装 yum install mysql-community-server -y  3.安装完成后启动并加入开机启动  启动  service mysqld start \/\/ 或 systemctl start mysqld   设置开机启动  systemctl enable mysqld  4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4  修改\/etc\/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：\n [mysqld] character_set_server=utf8 init_connect=\x27SET NAMES utf8\x27   修改保存后，重启数据库  service mysqld restart \/\/ 或 systemctl restart mysqld   登录数据库后可使用命令：show variables like \x26lsquo;%character%\x26rsquo;; 查看默认编码  5."
+  }
+</script>
+
+
+    <link href="https://www.binjx.top/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.binjx.top/">宾巨兴-个人博客</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.binjx.top/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.binjx.top/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">在CentOS7中安装MySQL（可选版本）</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-05-06T20:47:16JST">May 6, 2019</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.top/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">在CentOS7中安装MySQL（可选版本）</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h3 id="1-配置mysql-rpm源">1.配置Mysql rpm源</h3>
+
+<blockquote>
+<p>rpm下载链接 <a href="http://repo.mysql.com/yum/">http://repo.mysql.com/yum/</a> 版本（5.6~8.0）根据自己的系统选择要安装的版本</p>
+</blockquote>
+
+<ul>
+<li>5.7 版本</li>
+</ul>
+
+<pre><code class="language-shell">rpm -ivh http://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/mysql57-community-release-el7-10.noarch.rpm
+</code></pre>
+
+<ul>
+<li>8.0 版本</li>
+</ul>
+
+<pre><code class="language-shell">rpm -ivh http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-3.noarch.rpm
+</code></pre>
+
+<h3 id="2-用yum命令安装">2.用yum命令安装</h3>
+
+<pre><code class="language-shell">yum install mysql-community-server -y
+</code></pre>
+
+<h3 id="3-安装完成后启动并加入开机启动">3.安装完成后启动并加入开机启动</h3>
+
+<ul>
+<li>启动</li>
+</ul>
+
+<pre><code class="language-shell">service mysqld start
+// 或
+systemctl start mysqld
+</code></pre>
+
+<ul>
+<li>设置开机启动</li>
+</ul>
+
+<pre><code class="language-shell">systemctl enable mysqld
+</code></pre>
+
+<h3 id="4-默认编码设置为utf8-可选-根据自己需求设置不同编码如utf8mb4">4.默认编码设置为utf8 （可选），根据自己需求设置不同编码如utf8mb4</h3>
+
+<blockquote>
+<p>修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：</p>
+</blockquote>
+
+<pre><code class="language-shell">[mysqld]
+character_set_server=utf8
+init_connect='SET NAMES utf8'
+</code></pre>
+
+<ul>
+<li>修改保存后，重启数据库</li>
+</ul>
+
+<pre><code class="language-shell">service mysqld restart
+// 或
+systemctl restart mysqld
+</code></pre>
+
+<ul>
+<li>登录数据库后可使用命令：show variables like &lsquo;%character%&rsquo;; 查看默认编码</li>
+</ul>
+
+<h3 id="5-登录及密码设置">5.登录及密码设置</h3>
+
+<ul>
+<li>默认密码登录</li>
+</ul>
+
+<pre><code class="language-shell">mysql -uroot -p$(awk '/temporary password/{print $NF}'/var/log/mysqld.log)
+</code></pre>
+
+<ul>
+<li>密码规则重置</li>
+</ul>
+
+<pre><code class="language-shell">// 密码组合规则
+mysql&gt; set global validate_password_policy=0;
+// 密码长度
+mysql&gt; set global validate_password_length=0;
+</code></pre>
+
+<ul>
+<li>设置新密码</li>
+</ul>
+
+<pre><code class="language-shell">set password for root@localhost = password('123456');
+</code></pre>
+
+<p>设置完成后可退出，然后尝试用新的密码登录。</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF/">后端</a></li>
+          
+          <li><a href="https://www.binjx.top/categories/mysql/">MySQL</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.top/tags/mysql/">MySQL</a></li>
+          
+          <li><a href="https://www.binjx.top/tags/centos/">CentOS</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/post/2019-03-25/" class="list-group-item">phpMyAdmin安装</a>
+      
+      <a href="https://www.binjx.top/post/2019-03-18/" class="list-group-item">在CentOS7中安装MySQL（可选版本）</a>
+      
+      <a href="https://www.binjx.top/post/2018-08-20/" class="list-group-item">在CentOS服务器环境中安装高版本的PHP</a>
+      
+      <a href="https://www.binjx.top/post/2018-05-12/" class="list-group-item">scss基本语法</a>
+      
+      <a href="https://www.binjx.top/post/2017-10-05/" class="list-group-item">如何在GitHub中绑定自己的域名</a>
+      
+      <a href="https://www.binjx.top/post/2017-06-06/" class="list-group-item">CentOS7下LNMP环境配置-服务器配置</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF" class="list-group-item">后端</a>
+      
+      <a href="https://www.binjx.top/categories/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.top/categories/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.top/categories/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://www.binjx.top/categories/%E5%85%B6%E4%BB%96" class="list-group-item">其他</a>
+      
+      <a href="https://www.binjx.top/categories/%E5%89%8D%E7%AB%AF" class="list-group-item">前端</a>
+      
+      <a href="https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/tags/centos" class="list-group-item">centos</a>
+      
+      <a href="https://www.binjx.top/tags/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://www.binjx.top/tags/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.top/tags/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.top/tags/github" class="list-group-item">github</a>
+      
+      <a href="https://www.binjx.top/tags/scss" class="list-group-item">scss</a>
+      
+      <a href="https://www.binjx.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; 宾巨兴-个人博客</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

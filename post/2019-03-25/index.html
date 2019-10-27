@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+
+<link rel="canonical" href="https://www.binjx.top/post/2019-03-25/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>phpMyAdmin安装 - 宾巨兴-个人博客</title>
+    
+<meta name="description" content=" 一、下载phpMyAdmin，并解压  cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下  cd /www   下载 &amp;gt; 下载地址 https://www.phpmyadmin.net/downloads/  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip   解压  unzip phpMyAdmin-4.9.1-all-languages.zip   删除压缩包  rm phpMyAdmin-4.9.1-all-languages.zip  二、其他设置  如遇 ./tmp/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限 密码短语问题。编辑文件phpMyAdmin/config.sample.inc.php和phpMyAdmin/libraries/config.default.php，修改此项：$cfg[&amp;lsquo;blowfish_secret&amp;rsquo;] = &amp;ldquo;，在空字符  ">
+
+<meta property="og:title" content="phpMyAdmin安装 - 宾巨兴-个人博客">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.binjx.top/post/2019-03-25/">
+<meta property="og:image" content="https://www.binjx.top/images/default.png">
+<meta property="og:site_name" content="宾巨兴-个人博客">
+<meta property="og:description" content=" 一、下载phpMyAdmin，并解压  cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下  cd /www   下载 &amp;gt; 下载地址 https://www.phpmyadmin.net/downloads/  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip   解压  unzip phpMyAdmin-4.9.1-all-languages.zip   删除压缩包  rm phpMyAdmin-4.9.1-all-languages.zip  二、其他设置  如遇 ./tmp/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限 密码短语问题。编辑文件phpMyAdmin/config.sample.inc.php和phpMyAdmin/libraries/config.default.php，修改此项：$cfg[&amp;lsquo;blowfish_secret&amp;rsquo;] = &amp;ldquo;，在空字符  ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="宾巨兴-个人博客">
+<meta name="twitter:url" content="https://www.binjx.top/post/2019-03-25/">
+<meta name="twitter:title" content="phpMyAdmin安装 - 宾巨兴-个人博客">
+<meta name="twitter:description" content=" 一、下载phpMyAdmin，并解压  cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下  cd /www   下载 &amp;gt; 下载地址 https://www.phpmyadmin.net/downloads/  wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip   解压  unzip phpMyAdmin-4.9.1-all-languages.zip   删除压缩包  rm phpMyAdmin-4.9.1-all-languages.zip  二、其他设置  如遇 ./tmp/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限 密码短语问题。编辑文件phpMyAdmin/config.sample.inc.php和phpMyAdmin/libraries/config.default.php，修改此项：$cfg[&amp;lsquo;blowfish_secret&amp;rsquo;] = &amp;ldquo;，在空字符  ">
+<meta name="twitter:image" content="https://www.binjx.top/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/www.binjx.top\/"
+    },
+    "headline": "phpMyAdmin安装 - 宾巨兴-个人博客",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.binjx.top\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-03-25T22:23:45JST",
+    "dateModified": "2019-03-28T16:35:24JST",
+    "author": {
+      "@type": "Person",
+      "name": "宾巨兴-个人博客"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "宾巨兴-个人博客",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.binjx.top\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": " 一、下载phpMyAdmin，并解压  cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下  cd \/www   下载 \x26gt; 下载地址 https:\/\/www.phpmyadmin.net\/downloads\/  wget https:\/\/files.phpmyadmin.net\/phpMyAdmin\/4.9.1\/phpMyAdmin-4.9.1-all-languages.zip   解压  unzip phpMyAdmin-4.9.1-all-languages.zip   删除压缩包  rm phpMyAdmin-4.9.1-all-languages.zip  二、其他设置  如遇 .\/tmp\/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限\n 密码短语问题。编辑文件phpMyAdmin\/config.sample.inc.php和phpMyAdmin\/libraries\/config.default.php，修改此项：$cfg[\x26lsquo;blowfish_secret\x26rsquo;] = \x26ldquo;，在空字符\n  "
+  }
+</script>
+
+
+    <link href="https://www.binjx.top/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.binjx.top/">宾巨兴-个人博客</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://www.binjx.top/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.binjx.top/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">phpMyAdmin安装</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T16:35:24JST">Mar 28, 2019</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.binjx.top/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">phpMyAdmin安装</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h3 id="一-下载phpmyadmin-并解压">一、下载phpMyAdmin，并解压</h3>
+
+<ul>
+<li>cd进入网站目录，如我要将phpMyAdmin直接安装在网站根目录下</li>
+</ul>
+
+<pre><code class="language-shell">cd /www
+</code></pre>
+
+<ul>
+<li>下载
+&gt; 下载地址 <a href="https://www.phpmyadmin.net/downloads/">https://www.phpmyadmin.net/downloads/</a></li>
+</ul>
+
+<pre><code class="language-shell">wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip
+</code></pre>
+
+<ul>
+<li>解压</li>
+</ul>
+
+<pre><code class="language-shell">unzip phpMyAdmin-4.9.1-all-languages.zip
+</code></pre>
+
+<ul>
+<li>删除压缩包</li>
+</ul>
+
+<pre><code class="language-shell">rm phpMyAdmin-4.9.1-all-languages.zip
+</code></pre>
+
+<h3 id="二-其他设置">二、其他设置</h3>
+
+<ul>
+<li><p>如遇 ./tmp/ 无法缓存模板，运行缓慢提示，可在phpMyAdmin项目目录下新建一个名为tmp的文件夹，并开启读写权限</p></li>
+
+<li><p>密码短语问题。编辑文件phpMyAdmin/config.sample.inc.php和phpMyAdmin/libraries/config.default.php，修改此项：$cfg[&lsquo;blowfish_secret&rsquo;] = &ldquo;，在空字符</p></li>
+</ul>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF/">后端</a></li>
+          
+          <li><a href="https://www.binjx.top/categories/php/">PHP</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://www.binjx.top/tags/php/">PHP</a></li>
+          
+          <li><a href="https://www.binjx.top/tags/mysql/">MySQL</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/post/2019-03-25/" class="list-group-item">phpMyAdmin安装</a>
+      
+      <a href="https://www.binjx.top/post/2019-03-18/" class="list-group-item">在CentOS7中安装MySQL（可选版本）</a>
+      
+      <a href="https://www.binjx.top/post/2018-08-20/" class="list-group-item">在CentOS服务器环境中安装高版本的PHP</a>
+      
+      <a href="https://www.binjx.top/post/2018-05-12/" class="list-group-item">scss基本语法</a>
+      
+      <a href="https://www.binjx.top/post/2017-10-05/" class="list-group-item">如何在GitHub中绑定自己的域名</a>
+      
+      <a href="https://www.binjx.top/post/2017-06-06/" class="list-group-item">CentOS7下LNMP环境配置-服务器配置</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/categories/%E5%90%8E%E7%AB%AF" class="list-group-item">后端</a>
+      
+      <a href="https://www.binjx.top/categories/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.top/categories/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.top/categories/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://www.binjx.top/categories/%E5%85%B6%E4%BB%96" class="list-group-item">其他</a>
+      
+      <a href="https://www.binjx.top/categories/%E5%89%8D%E7%AB%AF" class="list-group-item">前端</a>
+      
+      <a href="https://www.binjx.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://www.binjx.top/tags/centos" class="list-group-item">centos</a>
+      
+      <a href="https://www.binjx.top/tags/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://www.binjx.top/tags/php" class="list-group-item">php</a>
+      
+      <a href="https://www.binjx.top/tags/css" class="list-group-item">css</a>
+      
+      <a href="https://www.binjx.top/tags/github" class="list-group-item">github</a>
+      
+      <a href="https://www.binjx.top/tags/scss" class="list-group-item">scss</a>
+      
+      <a href="https://www.binjx.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8" class="list-group-item">服务器</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; 宾巨兴-个人博客</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
